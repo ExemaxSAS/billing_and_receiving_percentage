@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+<record id="view_add_billing_percent_in_tree" model="ir.ui.view">
+        <field name="name">add.billing.percent.in.tree.tree</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+      
+         <xpath expr="//field[@name='currency_id']" position="after">
+                   <!-- <field name="campo_porcentaje"/>
+                   <field name="campo_porcentaje_recep"/>  -->
+        </xpath>
+   
+        </field>
+
+</record>
+
+ <record id="view_add_billing_percent_in_list" model="ir.ui.view">
+     <field name="name">add.billing.percent.in.list</field>
+     <field name="model">purchase.order</field>
+     <field name="inherit_id" ref="purchase.purchase_order_kpis_tree"/>
+     <field name="arch" type="xml">
+         <xpath expr="//field[@name='state']" position="after">
+            <button type="object" name="calculo_porcentaje" string ="Cal Compras"/>
+            <field name="campo_porcentaje"/>
+            <button type="object" name="calculo_porcentaje_re" string ="Cal Recep"/>
+            <field name="campo_porcentaje_recep"/>  
+                     
+          </xpath>
+      
+     </field>
+
+ </record>
+           
+    	
+    
+</odoo>
